@@ -1,6 +1,6 @@
 {
-  "name": "@rt0/svelte-hooks",
-  "version": "0.0.1",
+  "name": "@raythurnevoid/svelte-hooks",
+  "version": "0.0.2",
   "description": "",
   "main": "./cjs/index.js",
   "module": "./esm/index.ts",
@@ -11,7 +11,9 @@
     "copy:esm": "copyfiles --up 1 src/**/*.* lib/esm",
     "tsc:cjs": "tsc -p tsconfig.lib.cjs.json",
     "tsc:esm": "tsc -p tsconfig.lib.esm.json",
-    "lib": "npm-run-all clean-lib copy:package copy:cjs copy:esm tsc:cjs",
+		"lib": "npm-run-all clean-lib copy:package copy:cjs copy:esm tsc:cjs",
+		"prepackage": "npm run lib",
+		"package": "npm publish ./lib --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
