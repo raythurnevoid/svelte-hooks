@@ -2,7 +2,32 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "site"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"workbench.colorCustomizations": {
+			"activityBar.background": "#b122be",
+			"activityBar.inactiveForeground": "#ffffff",
+			"activityBar.activeBackground": "#d893df",
+			"activityBar.foreground": "#00152e",
+			"activityBar.activeBorder": "#f3f8ff",
+			"activityBarBadge.background": "#0a0a1d",
+			"activityBarBadge.foreground": "#e7e7e7",
+		},
+		"prettier.useTabs": true,
+		"prettier.singleQuote": false,
+		"editor.formatOnSave": true,
+		"editor.insertSpaces": false,
+		"typescript.tsdk": "node_modules\\typescript\\lib",
+		"typescript.preferences.importModuleSpecifier": "relative"
+	},
+	"extensions": {
+		"recommendations": [
+			"svelte.svelte-vscode",
+			"esbenp.prettier-vscode"
+		]
+	}
 }

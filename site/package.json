@@ -1,0 +1,29 @@
+{
+	"name": "svelte-app",
+	"version": "1.0.0",
+	"scripts": {
+		"webpack": "cross-env TS_NODE_PROJECT=\"tsconfig.tsnode.json\" webpack",
+		"clean": "del-cli dist",
+		"dev": "cross-env TS_NODE_PROJECT=\"tsconfig.tsnode.json\" ts-node node_modules/sapper/dist/cli.js dev",
+		"build": "sapper build",
+		"analyze": "npm run webpack -- --env analyzeBundle --config webpack.config.analyze.ts",
+		"analyze:prod": "npm run analyze -- --env production",
+		"stats": "npm run webpack -- --config webpack.config.analyze.ts --json=stats.json",
+		"stats:prod": "npm run stats -- --env production",
+		"export": "sapper export",
+		"start": "node __sapper__/build",
+		"debug": "cross-env TS_NODE_PROJECT=\"tsconfig.tsnode.json\" node --inspect -r ts-node/register -r tsconfig-paths/register node_modules/sapper/dist/cli.js dev",
+		"validate": "svelte-check --ignore src/node_modules/@sapper"
+	},
+	"browserslist": [
+		"defaults and supports es6-module"
+	],
+	"devDependencies": {
+		"@raythurnevoid/svelte-sapper-template": "^0.0.4",
+		"@types/compression": "^1.7.0",
+		"@types/polka": "^0.5.2",
+		"autoprefixer": "^10.2.3",
+		"copyfiles": "^2.4.1"
+	},
+	"dependencies": {}
+}
