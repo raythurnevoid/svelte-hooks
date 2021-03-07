@@ -1,3 +1,5 @@
+<svelte:options immutable={true} />
+
 <script context="module" lang="ts">
 	let count = 0;
 </script>
@@ -10,11 +12,9 @@
 	export let onUpdate: (oldValue?: any) => void;
 	export const id: string = `../../../../packages/common/hooks/UseState-${count++}`;
 
-	let valueMemo: {value: any};
+	let valueMemo: { value: any };
 	onMount(() => {
-		tick().then(() => {
-			valueMemo = {value};
-		});
+		valueMemo = { value };
 	});
 
 	function onValueUpdate(value: any) {
@@ -41,7 +41,5 @@
 		return value;
 	}
 </script>
-
-<svelte:options immutable={true} />
 
 <Use effect hook={() => onValueUpdate(value)} />
