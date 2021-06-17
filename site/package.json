@@ -2,12 +2,15 @@
 	"name": "svelte-app",
 	"version": "1.0.0",
 	"scripts": {
-		"webpack": "cross-env TS_NODE_PROJECT=\"tsconfig.tsnode.json\" webpack",
+		"env": "cross-env TS_NODE_PROJECT=\"tsconfig.tsnode.json\"",
+		"ts-node": "npm run env -- node -r ts-node/register -r tsconfig-paths/register --",
+		"ts-node:inspect": "npm run ts-node -- --inspect --",
+		"webpack": "npm run env -- webpack",
 		"clean": "del-cli dist",
-		"dev": "cross-env TS_NODE_PROJECT=\"tsconfig.tsnode.json\" ts-node node_modules/sapper/dist/cli.js dev",
+		"dev": "npm run ts-node -- node_modules/sapper/dist/cli.js dev",
 		"build": "sapper build",
-		"analyze": "npm run webpack -- --env analyzeBundle --config webpack.config.analyze.ts",
-		"analyze:prod": "npm run analyze -- --env production",
+		"analyze": "npm run webpack -- --env analyzeBundle --env fancyProgress --config webpack.config.analyze.ts",
+		"analyze:prod": "npm run analyze -- --env production --env fancyProgress ",
 		"stats": "npm run webpack -- --config webpack.config.analyze.ts --json=stats.json",
 		"stats:prod": "npm run stats -- --env production",
 		"export": "sapper export",
@@ -16,14 +19,12 @@
 		"validate": "svelte-check --ignore src/node_modules/@sapper"
 	},
 	"browserslist": [
-		"defaults and supports es6-module"
+		"last 1 year and >5% and supports es6-module"
 	],
 	"devDependencies": {
-		"@raythurnevoid/svelte-sapper-template": "^0.0.4",
+		"@raythurnevoid/svelte-sapper-template": "^0.0.33",
 		"@types/compression": "^1.7.0",
-		"@types/polka": "^0.5.2",
-		"autoprefixer": "^10.2.3",
-		"copyfiles": "^2.4.1"
+		"@types/express": "^4.17.12"
 	},
 	"dependencies": {}
 }

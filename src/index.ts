@@ -92,7 +92,7 @@ export function useEffectOnce(cb: () => void) {
 
 export function useDebounce(cb: () => void, debounce: number) {
 	const hook = use(cb);
-	let timeout: number;
+	let timeout: ReturnType<typeof setTimeout>;
 
 	return createHookApi(
 		(deps: any[]) => {
@@ -112,7 +112,7 @@ export function useDebounce(cb: () => void, debounce: number) {
 
 export function useThrottle(cb: () => void, throttle: number) {
 	const hook = use(cb);
-	let timeout: number;
+	let timeout: ReturnType<typeof setTimeout>;
 
 	return createHookApi(
 		(deps: any[]) => {
