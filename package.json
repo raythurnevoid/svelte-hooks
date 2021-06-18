@@ -1,6 +1,6 @@
 {
 	"name": "@raythurnevoid/svelte-hooks",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"description": "",
 	"scripts": {
 		"clean-lib": "del-cli lib",
@@ -17,6 +17,12 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"type": "module",
+	"exports": {
+		".": {
+			"import": "./index.js",
+			"require": "./cjs/index.js"
+		}
+	},
 	"browserslist": [
 		"last 1 year and >5% and supports es6-module"
 	],
