@@ -19,12 +19,22 @@
 		"editor.formatOnSave": true,
 		"editor.insertSpaces": false,
 		"typescript.tsdk": "node_modules\\typescript\\lib",
-		"typescript.preferences.importModuleSpecifier": "relative"
+		"typescript.preferences.importModuleSpecifier": "relative",
+		"typescript.preferences.importModuleSpecifierEnding": "js"
 	},
 	"extensions": {
 		"recommendations": [
+			"esbenp.prettier-vscode",
 			"svelte.svelte-vscode",
-			"esbenp.prettier-vscode"
+			"CoenraadS.bracket-pair-colorizer-2",
+			"aaron-bond.better-comments",
+			"wmaurer.change-case",
+			"mikestead.dotenv",
+			"usernamehw.errorlens",
+			"christian-kohler.path-intellisense",
+			"searKing.preview-vscode",
+			"pflannery.vscode-versionlens",
+			"vscode-icons-team.vscode-icons",
 		]
 	}
 }

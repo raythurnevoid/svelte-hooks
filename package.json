@@ -4,13 +4,13 @@
 	"description": "",
 	"scripts": {
 		"clean-lib": "del-cli lib",
-		"copy:package:cjs": "copyfiles --up 1 cjs/package.json lib/cjs",
+		"copy:package:cjs": "copyfiles --up 1 cjs/* lib/cjs",
 		"copy:package": "copyfiles package.json lib",
-		"copy:cjs": "copyfiles --up 1 src/**/*.!(ts)* lib/cjs",
-		"copy:src": "copyfiles --up 1 src/**/*.* lib/src",
-		"copy": "copyfiles --up 1 src/**/*.!(ts)* lib",
-		"tsc:cjs": "tsc -p tsconfig.lib.cjs.json",
+		"copy:src": "copyfiles --up 2 src/lib/**/* lib/src",
+		"copy:cjs": "copyfiles --up 2 src/lib/**/*!(.ts) lib/cjs",
+		"copy": "copyfiles --up 2 src/lib/**/*!(.ts) lib",
 		"tsc": "tsc -p tsconfig.lib.json",
+		"tsc:cjs": "tsc -p tsconfig.lib.cjs.json",
 		"lib": "npm-run-all clean-lib copy:package copy:package:cjs copy copy:cjs copy:src tsc tsc:cjs",
 		"prepackage": "npm run lib",
 		"package": "npm publish ./lib --access public",
@@ -24,7 +24,7 @@
 		}
 	},
 	"browserslist": [
-		"last 1 year and >5% and supports es6-module"
+		"> 5%"
 	],
 	"repository": {
 		"type": "git",
@@ -32,10 +32,6 @@
 	},
 	"author": "Ray Thurne",
 	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/raythurnevoid/svelte-hooks/issues"
-	},
-	"homepage": "https://github.com/raythurnevoid/svelte-hooks#readme",
 	"devDependencies": {
 		"@raythurnevoid/svelte-template": "^0.1.4",
 		"svelte": "^3.38.2"
