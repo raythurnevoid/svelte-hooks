@@ -1,6 +1,6 @@
 {
 	"name": "@raythurnevoid/svelte-hooks",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"description": "",
 	"scripts": {
 		"clean-lib": "del-cli lib",
@@ -33,7 +33,7 @@
 	"author": "Ray Thurne",
 	"license": "ISC",
 	"devDependencies": {
-		"@raythurnevoid/svelte-template": "^0.1.4",
-		"svelte": "^3.38.2"
+		"@raythurnevoid/svelte-template": "^0.2.10",
+		"svelte": "^3.42.3"
 	}
 }

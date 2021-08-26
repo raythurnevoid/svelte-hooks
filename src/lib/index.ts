@@ -5,7 +5,7 @@ import { arrayEquals } from "./utils.js";
 import { onMount } from "svelte";
 
 export { Use, UseState, UseDebounce };
-export * from "./types";
+export * from "./types.js";
 
 export function use(cb: () => void) {
 	class _Use {
