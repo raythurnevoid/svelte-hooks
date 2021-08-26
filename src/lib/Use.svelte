@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onDestroy, onMount } from "svelte";
-	import type { DestroyerFunc, Hook } from "./types";
+	import type { DestroyerFunc, Hook } from "./types.js";
 
 	export let hook: Hook = null;
 	export let effect: boolean = false;

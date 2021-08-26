@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import { onDestroy } from "svelte";
-	import { UseState } from "./";
+	import { UseState } from "./index.js";
 
 	export let debounced: any;
 	export let value: any;

@@ -1,7 +1,7 @@
 import Use from "./Use.svelte";
 import UseState from "./UseState.svelte";
 import UseDebounce from "./UseDebounce.svelte";
-import { arrayEquals } from "./utils";
+import { arrayEquals } from "./utils.js";
 import { onMount } from "svelte";
 
 export { Use, UseState, UseDebounce };

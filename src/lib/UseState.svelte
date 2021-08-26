@@ -6,7 +6,7 @@
 
 <script lang="ts">
 	import Use from "./Use.svelte";
-	import { onMount, tick } from "svelte";
+	import { onMount } from "svelte";
 
 	export let value: any;
 	export let onUpdate: (oldValue?: any) => void;
